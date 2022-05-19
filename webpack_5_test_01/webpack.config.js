@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -12,4 +13,22 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
+    new webpack.DefinePlugin({
+      'IS_BROWSER_FROM_GLOBAL_CONFIG': true
+    })
+  ],
+  optimization: {
+    minimize: true,
+  },
+  module: {
+    rules: [{
+      use: [
+        { loader: "ifdef-loader", options: { IS_BROWSER_FOR_IFDEF: true }}
+      ]
+    }]
+  }
 };
