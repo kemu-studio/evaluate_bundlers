@@ -12,11 +12,7 @@ const K = requireNodeOrBrowser('@kmu/kcore', 'dupa')
 
 console.log(K);
 
-// Global constant defined in webpack.config.js with DefinePlugin.
-// Dead branch should be eliminated by 'minimize' optimization in webpack.
-/*
-  REVIEW IT: Is it possible to resolve require() under rollupjs?
-
+// Conditional require.
 if (IS_BROWSER_FROM_GLOBAL_CONFIG) {
   const browserOnly = require('./browserOnly.js')
   browserOnly.sayHelloBrowser(1234)
@@ -27,13 +23,13 @@ if (IS_BROWSER_FROM_GLOBAL_CONFIG) {
   serverOnly.sayHelloServer(5678)
   console.log('Hello from server!')
 }
-*/
+
 // Conditional import.
 //#if _IS_BROWSER_FROM_JSCC_PLUGIN
-  import { browserOnly } from './browserOnly.js'
+  import browserOnly from './browserOnly.js'
   browserOnly.sayHelloBrowser(9000)
 //#else
-  import { serverOnly } from './serverOnly.js'
+  import serverOnly from './serverOnly.js'
   serverOnly.sayHelloServer(9001)
 //#endif
 

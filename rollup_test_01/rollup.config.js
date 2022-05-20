@@ -14,10 +14,15 @@ export default {
     file: 'bundle.js',
     format: 'iife',
     //format: 'cjs',
+    //format: 'es',
     plugins: [terser()]
   },
   plugins: [
-    commonjs(),
+    commonjs({
+      // Needed to resolve both resolve() and import statements.
+      // https://stackoverflow.com/questions/62770883/how-to-include-both-import-and-require-statements-in-the-bundle-using-rollup
+      transformMixedEsModules: true
+    }),
     replace({
       IS_BROWSER_FROM_REPLACE_PLUGIN: true
     }),
@@ -27,9 +32,8 @@ export default {
     // https://github.com/rollup/plugins/tree/master/packages/node-resolve
     // Output imported modules to the bundle.
     nodeResolve({
-      exportConditions: [
-        'default', 'module', 'import'
-      ]
+      // Needed to follow "browser" entry point while resolving import.
+      browser: true,
     }),
     // https://www.npmjs.com/package/rollup-plugin-consts
     // Define global constant.
@@ -37,8 +41,8 @@ export default {
     consts({
       IS_BROWSER_FROM_GLOBAL_CONFIG: true
     }),
-    //babel({
-    //  exclude: 'node_modules/**'
-    //})
+    babel({
+      exclude: 'node_modules/**'
+    }),
   ]
 };
