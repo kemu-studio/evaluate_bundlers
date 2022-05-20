@@ -13,6 +13,8 @@ export default {
   },
   plugins: [
     commonjs(),
+    // https://github.com/rollup/plugins/tree/master/packages/node-resolve
+    // Output imported modules to the bundle.
     nodeResolve()
   ]
 };
