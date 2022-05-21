@@ -6,10 +6,3 @@ export class CesarClass {
     emitAnnConsoleLog2()
   }
 }
-
-export class CesarClass_ThisShouldBeTreeShaked {
-  doAnnStuff() {
-    emitAnnConsoleLog2()
-    emitAnnConsoleLog()
-  }
-}
