@@ -28,7 +28,8 @@ if (IS_BROWSER_FROM_GLOBAL_CONFIG) {
   console.log('Hello from server!')
 }
 
-// Conditional import.
+// TODO: Conditional import.
+/*
 //#if _IS_BROWSER_FROM_JSCC_PLUGIN
   import browserOnly from './browserOnly.js'
   browserOnly.sayHelloBrowser(9000)
@@ -36,6 +37,7 @@ if (IS_BROWSER_FROM_GLOBAL_CONFIG) {
   import serverOnly from './serverOnly.js'
   serverOnly.sayHelloServer(9001)
 //#endif
+*/
 
 // Import polimorphic module.
 // Browser and server code should be distinguish basing on main/browser
