@@ -2,15 +2,25 @@
   "name": "parcel_test_01",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "build": "parcel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "source": "src/index.js",
+  "source": "src/indexRequireNodeOrBrowser.js",
   "main": "bundle.js",
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "exampleBSC": "file:./src/exampleBSC"
+  },
   "devDependencies": {
     "parcel": "^2.5.0"
+  },
+  "targets": {
+    "main": {
+      "includeNodeModules": true
+    }
   }
 }
