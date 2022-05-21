@@ -5,6 +5,12 @@ const AnnInternalFunction = () => {
   }
 }
 
+const nameWhichShouldNotBeFound = () => {
+  anotherNameWhichShouldNotBeFound()
+}
+nameWhichShouldNotBeFound();
+
+
 export function emitAnnConsoleLog() {
   console.log('The libAnn::emitAnnConsoleLog()...')
   console.log('The libAnn::emitAnnConsoleLog()...')
