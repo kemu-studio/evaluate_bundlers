@@ -1,0 +1,21 @@
+{
+  "name": "microbundle_test_01",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/indexRequireNodeOrBrowser.js",
+  "main": "bundle.js",
+  "type": "module",
+  "scripts": {
+    "build": "microbundle --define IS_BROWSER_FROM_GLOBAL_CONFIG=true",
+    "dev": "microbundle watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "exampleBSC": "file:./src/exampleBSC"
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.0"
+  }
+}
