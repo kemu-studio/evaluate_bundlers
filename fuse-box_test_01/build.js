@@ -3,7 +3,7 @@ const { fusebox } = require('fuse-box')
 
 const fuse = fusebox({
   target: 'browser',
-  entry: 'src/index.js',
+  entry: 'src/indexRequireNodeOrBrowser.js',
   webIndex: {
     template: 'index.html',
   },

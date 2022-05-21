@@ -9,6 +9,12 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "exampleBSC": "file:./src/exampleBSC"
+  },
+  "dependencies": {
+    "exampleBSC": "file:./src/exampleBSC"
+  },
   "devDependencies": {
     "fuse-box": "^4.0.0"
   }
