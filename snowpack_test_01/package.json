@@ -10,6 +10,9 @@
   },
   "author": "",
   "license": "ISC",
+    "dependencies": {
+    "exampleBSC": "file:./src/exampleBSC"
+  },
   "devDependencies": {
     "snowpack": "^3.8.8"
   }
