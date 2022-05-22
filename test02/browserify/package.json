@@ -1,0 +1,35 @@
+{
+  "name": "browserify_test_02",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index1.js",
+  "scripts": {
+    "build": "browserify src/index1.js src/index2.js -p [ factor-bundle -o build/index1.js -o build/index2.js ] -o build/common.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.0",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "factor-bundle": "^2.5.0"
+  },
+  "workspaces": [
+    "./packages/*",
+    "./packages/@kmu/*"
+  ],
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "@babel/preset-env"
+          ]
+        }
+      ]
+    ]
+  }
+}

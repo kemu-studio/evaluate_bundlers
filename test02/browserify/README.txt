@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/21805308/sharing-common-code-across-pages-with-browserify
