@@ -1,0 +1,20 @@
+{
+  "name": "microbundle_test_02",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "microbundle src/index1.js src/index2.js --output=build --format=esm",
+    "build-watch": "microbundle watch src/index1.js src/index2.js --output=build --format=esm",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.14.39"
+  },
+  "workspaces": [
+    "./packages/*",
+    "./packages/@kmu/*"
+  ]
+}
