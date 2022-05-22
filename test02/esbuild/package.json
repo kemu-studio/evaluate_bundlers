@@ -1,0 +1,20 @@
+{
+  "name": "esbuild_test_02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "esbuild src/index1.js src/index2.js --bundle --splitting --format=esm --minify --minify-syntax --tree-shaking=true --outdir=build",
+    "build-watch": "esbuild src/index1.js src/index2.js --watch --bundle --splitting --format=esm --minify --minify-syntax --tree-shaking=true --outdir=build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.14.39"
+  },
+  "workspaces": [
+    "./packages/*",
+    "./packages/@kmu/*"
+  ]
+}
