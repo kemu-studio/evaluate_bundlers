@@ -1,5 +1,5 @@
 {
-  "name": "rollup_test_01",
+  "name": "rollup_test_02",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -24,8 +24,5 @@
   "workspaces": [
     "./packages/*",
     "./packages/@kmu/*"
-  ],
-  "dependencies": {
-    "glob": "^8.0.3"
-  }
+  ]
 }
